@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 function HomePage() {
   return (
-    <div className="hero h-[calc(100vh-11vh)] bg-base-200 px-0 lg-px-12">
+    <div className="hero min-h-[calc(100vh-64px)] bg-base-200 sm:px-12">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
           src="/notes.jpg"
@@ -13,13 +14,14 @@ function HomePage() {
           alt="hero image"
         />
         <div>
-          <h1 className="text-5xl font-bold">Box Office News!</h1>
+          <h1 className="text-5xl font-bold">Your Web notebook!</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure quos
+            excepturi, aut tenetur ullam ident velit quae rem sint volup ?
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn btn-primary">
+            <Link href="/signup">Get Started</Link>
+          </button>
         </div>
       </div>
     </div>
