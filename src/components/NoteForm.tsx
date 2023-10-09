@@ -16,22 +16,22 @@
         className="py-4 px-0 w-full md:px-8 flex flex-col gap-5 items-center justify-center"
       >
         <div className="w-full">
-          <label className="!text-sm m-1">Title</label>
+          <label className="!text-sm font-medium m-1">Title</label>
           <input
             type="text"
             placeholder="Title"
-            className="w-full input input-bordered "
-          />
+            className="w-full input input-bordered mt-1"
+          />  
         </div>
         <div className="w-full">
-          <label className="!text-sm m-1">Description</label>
+          <label className="!text-sm font-medium m-1">Description</label>
           <textarea
             placeholder="Note..."
-            className="w-full input h-[90px] textarea-bordered"
+            className="w-full input h-[90px] textarea-bordered mt-1"
           />
         </div>
         <div className="w-full">
-          <label className="block !text-sm m-1" htmlFor="Cat">
+          <label className="block !text-sm font-medium m-1" htmlFor="Cat">
             categories
           </label>
           <select className="select select-bordered  max-w-xs">
@@ -43,7 +43,7 @@
             <option>Home</option>
           </select>
         </div>
-        <button type="submit" className="btn text-xs btn-sm btn-accent">
+        <button type="submit" className="btn font-medium text-sm btn-sm btn-accent">
           Submit
         </button>
       </form>

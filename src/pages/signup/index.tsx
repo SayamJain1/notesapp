@@ -18,27 +18,27 @@ function Signup() {
             className="py-10 px-4 md:px-8 flex flex-col gap-7 items-center justify-center"
           >
             <div>
-              <label htmlFor="">username</label>
+              <label className="font-medium" htmlFor="">username</label>
               <input
                 type="text"
                 placeholder="e.g John Wick"
-                className="input input-bordered w-full max-w-xs"
+                className="input mt-1 input-bordered w-full max-w-xs"
               />
             </div>
             <div className="w-full">
-              <label htmlFor="">email</label>
+              <label className="font-medium" htmlFor="">email</label>
               <input
                 type="email"
                 placeholder="Example@gmail.com"
-                className="input input-bordered w-full max-w-xs"
+                className="input mt-1 input-bordered w-full max-w-xs"
               />
             </div>
             <div>
-              <label htmlFor="">password</label>
+              <label className="font-medium" htmlFor="">password</label>
               <input
                 type="password"
                 placeholder="Password"
-                className="input input-bordered w-full max-w-xs"
+                className="input mt-1 input-bordered w-full max-w-xs"
               />
             </div>
             <button type="submit" className="btn text-xs btn-sm btn-accent">
