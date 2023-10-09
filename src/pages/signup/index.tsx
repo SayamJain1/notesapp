@@ -27,7 +27,6 @@ function Signup() {
             </div>
             <div className="w-full">
               <label htmlFor="">email</label>
-
               <input
                 type="email"
                 placeholder="Example@gmail.com"
@@ -36,17 +35,13 @@ function Signup() {
             </div>
             <div>
               <label htmlFor="">password</label>
-
               <input
                 type="password"
                 placeholder="Password"
                 className="input input-bordered w-full max-w-xs"
               />
             </div>
-            <button
-              type="submit"
-              className="btn text-xs btn-sm btn-accent lowercase"
-            >
+            <button type="submit" className="btn text-xs btn-sm btn-accent">
               Sign-Up
             </button>
             <p className="text-sm">
