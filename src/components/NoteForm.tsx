@@ -1,10 +1,9 @@
-  function NoteForm() {
+function NoteForm() {
   const closeModal = () => {
     document.getElementById("my_modal_3")?.classList.remove("modal-open");
   }
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("formData submit");
     closeModal()
   };
 
@@ -21,7 +20,7 @@
             type="text"
             placeholder="Title"
             className="w-full input input-bordered mt-1"
-          />  
+          />
         </div>
         <div className="w-full">
           <label className="!text-sm font-medium m-1">Description</label>
