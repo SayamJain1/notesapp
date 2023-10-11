@@ -89,8 +89,8 @@ const Navbar = () => {
           <div className="hidden sm:block">
 
             <div className="flex gap-2 justify-center">
-              <button className="btn btn-sm btn-ghost">Login</button>
-              <button className="btn btn-sm btn-ghost">SignUp</button>
+              <button className="btn btn-sm btn-ghost"><Link href='/login'>Login</Link></button>
+              <button className="btn btn-sm btn-ghost"><Link href='/signup'>SignUp</Link></button>
             </div>
           </div>
           <div className="sm:hidden relative flex justify-center">
