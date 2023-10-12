@@ -53,10 +53,23 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Menu from "./Menu";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/firbase";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
   const [showMenu, setShowMenu] = useState(false)
+  const [isValid, setIsValid] = useState(false)
+
+
+
+  const signOutUser = () => {
+    signOut(auth).then(() => {
+      console.log('user log-out')
+    }).catch((error) => {
+      console.log('error user log-out')
+    });
+  }
 
   const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTheme = e.target.checked ? "luxury" : "light";
@@ -70,6 +83,16 @@ const Navbar = () => {
   }
 
   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user)
+        setIsValid(true)
+      } else {
+        console.log('else nothing')
+        setIsValid(false)
+      }
+    })
+
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
       setTheme(storedTheme);
@@ -87,11 +110,10 @@ const Navbar = () => {
       <div>
         <div>
           <div className="hidden sm:block">
-
-            <div className="flex gap-2 justify-center">
-              <button className="btn btn-sm btn-ghost"><Link href='/login'>Login</Link></button>
-              <button className="btn btn-sm btn-ghost"><Link href='/signup'>SignUp</Link></button>
-            </div>
+            {!isValid ? <div className="flex gap-2 justify-center">
+              <Link href='/login'><button className="btn btn-sm btn-ghost">Login</button></Link>
+              <Link href='/signup'><button className="btn btn-sm btn-ghost">SignUp</button></Link>
+            </div> : <button className="btn btn-sm btn-ghost" onClick={signOutUser}>Logout</button>}
           </div>
           <div className="sm:hidden relative flex justify-center">
             <label className="swap">

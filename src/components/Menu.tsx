@@ -10,8 +10,8 @@ function Menu({ showMenu, setShowMenu }: MenuProps) {
     return (
         <div>
             <div className="flex flex-col gap-2">
-                <button onClick={() => setShowMenu(!showMenu)} className="btn btn-sm btn-ghost"><Link href='/login'>Login</Link></button>
-                <button onClick={() => setShowMenu(!showMenu)} className="btn btn-sm btn-ghost"><Link href='/signup'>Signup</Link></button>
+                <Link href='/login'><button onClick={() => setShowMenu(!showMenu)} className="btn btn-sm btn-ghost">Login</button></Link>
+                <Link href='/signup'><button onClick={() => setShowMenu(!showMenu)} className="btn btn-sm btn-ghost">Signup</button></Link>
             </div>
         </div>
     )

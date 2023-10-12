@@ -1,7 +1,20 @@
 import NoteForm from "@/components/NoteForm";
-import React from "react";
+import { auth } from "@/firbase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
 
 function Notes() {
+  const router = useRouter()
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+      } else {
+        router.push("/login");
+      }
+    })
+  }, [])
+
   return (
     <div className="">
       <div className="py-5 sm:p-5 flex">
