@@ -55,21 +55,26 @@ import Link from "next/link";
 import Menu from "./Menu";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firbase";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { removeAuth, setAuth } from "@/redux/features/AuthSlice";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
-  const [showMenu, setShowMenu] = useState(false)
-  const [isValid, setIsValid] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
 
-
+  const state = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
 
   const signOutUser = () => {
-    signOut(auth).then(() => {
-      console.log('user log-out')
-    }).catch((error) => {
-      console.log('error user log-out')
-    });
-  }
+    signOut(auth)
+      .then(() => {
+        dispatch(removeAuth());
+        console.log("user log-out");
+      })
+      .catch((error) => {
+        console.log("error user log-out");
+      });
+  };
 
   const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTheme = e.target.checked ? "luxury" : "light";
@@ -79,19 +84,18 @@ const Navbar = () => {
   };
 
   const HandleOpenMenu = () => {
-    setShowMenu(!showMenu)
-  }
+    setShowMenu(!showMenu);
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user)
-        setIsValid(true)
+        dispatch(setAuth());
       } else {
-        console.log('else nothing')
-        setIsValid(false)
+        dispatch(removeAuth());
+        console.log("else nothing");
       }
-    })
+    });
 
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
@@ -110,18 +114,51 @@ const Navbar = () => {
       <div>
         <div>
           <div className="hidden sm:block">
-            {!isValid ? <div className="flex gap-2 justify-center">
-              <Link href='/login'><button className="btn btn-sm btn-ghost">Login</button></Link>
-              <Link href='/signup'><button className="btn btn-sm btn-ghost">SignUp</button></Link>
-            </div> : <button className="btn btn-sm btn-ghost" onClick={signOutUser}>Logout</button>}
+            {!state.isAuth ? (
+              <div className="flex gap-2 justify-center">
+                <Link href="/login">
+                  <button className="btn btn-sm btn-ghost">Login</button>
+                </Link>
+                <Link href="/signup">
+                  <button className="btn btn-sm btn-ghost">SignUp</button>
+                </Link>
+              </div>
+            ) : (
+              <button className="btn btn-sm btn-ghost" onClick={signOutUser}>
+                Logout
+              </button>
+            )}
           </div>
           <div className="sm:hidden relative flex justify-center">
             <label className="swap">
               <input onClick={HandleOpenMenu} type="checkbox" />
-              {showMenu ? <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" /></svg> : <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>}
-
+              {showMenu ? (
+                <svg
+                  className="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 512 512"
+                >
+                  <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                </svg>
+              ) : (
+                <svg
+                  className="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                </svg>
+              )}
             </label>
-            {showMenu && <div className=" z-10 bg-gray-100 rounded-xl shadow-xl p-2 absolute top-14 -left-5"><Menu showMenu={showMenu} setShowMenu={setShowMenu} /></div>}
+            {showMenu && (
+              <div className=" z-10 bg-gray-100 rounded-xl shadow-xl p-2 absolute top-14 -left-5">
+                <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+              </div>
+            )}
           </div>
         </div>
       </div>

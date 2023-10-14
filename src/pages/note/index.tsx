@@ -5,15 +5,15 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
 function Notes() {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
       } else {
         router.push("/login");
       }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <div className="">
