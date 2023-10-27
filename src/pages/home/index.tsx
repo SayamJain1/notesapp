@@ -15,10 +15,10 @@ function HomePage() {
         />
         <div>
           <h1 className="text-5xl font-bold">Your Web notebook!</h1>
-          <p className="py-6">
+          <div className="py-6">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure quos
             excepturi, aut tenetur ullam ident velit quae rem sint volup ?
-          </p>
+          </div>
           <Link href="/signup"><button className="btn btn-primary">
             Get Started
           </button></Link>

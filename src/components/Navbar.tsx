@@ -57,6 +57,7 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firbase";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { removeAuth, setAuth } from "@/redux/features/AuthSlice";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -86,6 +87,7 @@ const Navbar = () => {
   const HandleOpenMenu = () => {
     setShowMenu(!showMenu);
   };
+  const pathname = usePathname();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -124,9 +126,17 @@ const Navbar = () => {
                 </Link>
               </div>
             ) : (
-              <button className="btn btn-sm btn-ghost" onClick={signOutUser}>
-                Logout
-              </button>
+              <>
+                <Link
+                  href="/note"
+                  className={pathname == "/note" ? "bg-gray-500 p-1 rounded-md bg-opacity-10 hover:bg-none hover:bg-opacity-0" : ""}
+                >
+                  <button className="btn btn-sm btn-ghost">Note</button>
+                </Link>
+                <button className="btn btn-sm btn-ghost" onClick={signOutUser}>
+                  Logout
+                </button>
+              </>
             )}
           </div>
           <div className="sm:hidden relative flex justify-center">
@@ -156,7 +166,12 @@ const Navbar = () => {
             </label>
             {showMenu && (
               <div className=" z-10 bg-gray-100 rounded-xl shadow-xl p-2 absolute top-14 -left-5">
-                <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+                <Menu
+                  signOutUser={signOutUser}
+                  auth={state.isAuth}
+                  showMenu={showMenu}
+                  setShowMenu={setShowMenu}
+                />
               </div>
             )}
           </div>
