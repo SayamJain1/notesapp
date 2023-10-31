@@ -19,9 +19,9 @@ function HomePage() {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure quos
             excepturi, aut tenetur ullam ident velit quae rem sint volup ?
           </div>
-          <Link href="/signup"><button className="btn btn-primary">
-            Get Started
-          </button></Link>
+          <Link href="/signup">
+            <button className="btn btn-primary">Get Started</button>
+          </Link>
         </div>
       </div>
     </div>

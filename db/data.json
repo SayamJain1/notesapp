@@ -1,0 +1,130 @@
+{
+  "notes": [
+    {
+      "id": "7",
+      "title": "TITLE IT IS",
+      "description": "this is description ",
+      "categories": "Study"
+    },
+    {
+      "id": "8",
+      "title": "TITLE IT IS",
+      "description": "this is description",
+      "categories": "Study"
+    },
+    {
+      "id": "78d2a19d-3dea-4e96-b4dd-247a08304b3a",
+      "title": "this is tititititile",
+      "description": "This is descriptitonaknsd aosro ",
+      "categories": "Home"
+    },
+    {
+      "id": "8820bea1-2249-48f4-81fa-5c38b2102e0e",
+      "title": "this is new title i m writting here",
+      "description": "this sijasldfj kasdlkf jalsdjf lajssldf jakssd jkajasdfk jkasjsdkdfl jalksdj klj",
+      "categories": "study"
+    },
+    {
+      "id": "e87a033a-3268-4353-9824-e37b5da82e86",
+      "title": "asdfasdf",
+      "description": "assdfasdfas assdf asdf assdf assd assd ",
+      "categories": "study"
+    },
+    {
+      "id": "119bc91f-d563-4323-979a-f7ce6d4fdd75",
+      "title": "wqerqew",
+      "description": "qwer qwerqwer qwe rrqwer qwer qwe rqwer ",
+      "categories": "study"
+    },
+    {
+      "id": "ef739a5a-de21-49d2-8a8a-0473555d73f1",
+      "title": "you are the nest",
+      "description": "nest is best here",
+      "categories": "Home"
+    },
+    {
+      "id": "1f7b46de-0f50-46e7-808f-19abfea12aab",
+      "title": "nextjs",
+      "description": "ajsdfjasl jfalsjdf lajsdl ",
+      "categories": "study"
+    },
+    {
+      "id": "fe8cfefa-355e-4ae6-b1cf-9f63afa6d5e2",
+      "title": "blah blah",
+      "description": "baksjfdka jsdf jkasjf dkasdfas dfa",
+      "categories": "study"
+    },
+    {
+      "id": "8b917aef-e181-49c1-812f-d95c16be7a3f",
+      "title": "poqiwer m n ",
+      "description": "qweru pquewi oq w",
+      "categories": "Home"
+    },
+    {
+      "id": "1dbaa33a-6ecc-42a6-a58e-5d4610f2222f",
+      "title": "a jakshd kahksd f",
+      "description": "qkwe riq ewr",
+      "categories": "study"
+    },
+    {
+      "id": "65f0bea4-9fa8-4645-b860-ce535d833174",
+      "title": "kajsfdl;l jaksjd kj",
+      "description": "qpweoi ruqwu mnsma,df asf ",
+      "categories": "study"
+    },
+    {
+      "id": "189f047d-296a-4fc3-9e6b-89a02ff2075a",
+      "title": "qwpero iuoiuiqw ",
+      "description": " asdjf kas ",
+      "categories": "Home"
+    },
+    {
+      "id": "52ec0a5d-d08b-4092-999a-1bab2a8853b8",
+      "title": "asdf hjaskdh fkahsd asdkf hkha sdf",
+      "description": "asdf asdf asdf asd asdf f",
+      "categories": "study"
+    },
+    {
+      "id": "f7b5156b-a0f1-47b8-93ed-f15e4b2ec5c4",
+      "title": "asdfasdf assdfassd assdf assdf assd fa sdf",
+      "description": "asd fasd asdf as df",
+      "categories": "study"
+    },
+    {
+      "id": "8242f430-1173-4649-bb0a-fa4eda1194bc",
+      "title": "this is the best next js react",
+      "description": "afa sdfajsd fkas as ddfa sdfa sdff ",
+      "categories": "study"
+    },
+    {
+      "id": "42eb427b-b03d-4fd9-ad8c-4e55968cd34a",
+      "title": "asdfa sdf asd asd fasd asdf asdf ",
+      "description": "asd fasd adsf asdf f",
+      "categories": "study"
+    },
+    {
+      "id": "e14a2263-63e1-400c-a5e8-78d92662938f",
+      "title": "a asdf asdf kasdf asd asdf asdf as das sdfa sdf",
+      "description": "asd fasdf fasdf asdf ashdf fkqwehrq bmzbmnb zxcvbasj kdhf kwher khqwkerh qwerr qwe ",
+      "categories": "study"
+    },
+    {
+      "id": "d2ea7df3-a16c-427c-87dd-23be41187cc2",
+      "title": "asdf asjd alsdj lasjd ljasld dalsd kasdf f",
+      "description": "asdj flasjdl fjasldf fjlkasjd flkajsd ljas djalskdj lasjd lajssdfd ljaslds jalskd jlkasdj lasjd lajsds dljasd ljaslds jasldsj flajsd ld",
+      "categories": "study"
+    },
+    {
+      "id": "7e8b2d9b-aa61-4cdb-ba5a-794490c8c3b1",
+      "title": "asdfj asjd lajsld fjalsjdf lajsdlf jlasjdlf jasd ",
+      "description": "asd faksd fjlasjsd ljalsdfj lasjsdf l jalsdfj lasdj akd kbn mb kjk jl; jl; ja ldfkfja sdllkf jasdffhuiwqeyr gsdjkdgajksdfgf ajsdfdgf abdfansdvb asdfh dk kfhasdffj hhasjd fasdkf jh ad sfkjhj aasdfj fhaslkdkj haskdjf dhaksd dhaksmdnfbmnasbsd ",
+      "categories": "study"
+    },
+    {
+      "id": "b1faad3c-7792-4ec3-b7fa-417dfd350492",
+      "title": "you are using nextjs with typescript ",
+      "description": "asd fasd asd fasdfassdf asdf asdf asdf asdf asdf asdf fasdf assdd fassdf asdf ",
+      "categories": "Office"
+    }
+  ]
+}

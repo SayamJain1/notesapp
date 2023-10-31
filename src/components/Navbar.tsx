@@ -58,6 +58,7 @@ import { auth } from "@/firbase";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { removeAuth, setAuth } from "@/redux/features/AuthSlice";
 import { usePathname } from "next/navigation";
+import { clearDataOnLogout } from "@/redux/features/DataSlice";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -69,6 +70,7 @@ const Navbar = () => {
   const signOutUser = () => {
     signOut(auth)
       .then(() => {
+        dispatch(clearDataOnLogout());
         dispatch(removeAuth());
         console.log("user log-out");
       })
@@ -129,7 +131,11 @@ const Navbar = () => {
               <>
                 <Link
                   href="/note"
-                  className={pathname == "/note" ? "bg-gray-500 p-1 rounded-md bg-opacity-10 hover:bg-none hover:bg-opacity-0" : ""}
+                  className={
+                    pathname == "/note"
+                      ? "bg-gray-500 p-1 rounded-md bg-opacity-10 hover:bg-none hover:bg-opacity-0"
+                      : ""
+                  }
                 >
                   <button className="btn btn-sm btn-ghost">Note</button>
                 </Link>

@@ -7,6 +7,8 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/navigation";
 
 const schema = yup
   .object({
@@ -27,13 +29,21 @@ function NoteForm() {
     (state) => state.noteForm
   );
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const closeModal = () => {
     document.getElementById("my_modal_3")?.classList.remove("modal-open");
   };
-  
-  const handleSubmitForm = () => {
-    console.log(title, isLoading, description, categories);
+
+  const handleSubmitForm = async () => {
+    const response = await fetch("api/getNotes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: uuidv4(), title, description, categories }),
+    });
+    const result = await response.json();
+    console.log(result);
+    router.refresh();
     closeModal();
   };
 
